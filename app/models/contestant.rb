@@ -7,4 +7,8 @@ class Contestant <ApplicationRecord
 	def self.contestant_count
 		count
 	end
+
+	def self.average_age
+		average(:age)
+	end
 end

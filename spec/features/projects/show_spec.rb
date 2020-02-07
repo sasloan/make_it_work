@@ -10,10 +10,10 @@ describe 'As a Visitor' do
 			@accessories = Challenge.create!(theme: "Using Accessories", project_budget: 200)
 			@hat = @accessories.projects.create!(name: "Hat style", material: "Hat stuff")
 			@shoe = @accessories.projects.create!(name: "Shoe styles", material: "shoe stuff")
-			@holly = Contestant.create!(name: "Holly", age: 27, hometown: "Detroit", years_of_experience: 3)
+			@holly = Contestant.create!(name: "Holly", age: 38, hometown: "Detroit", years_of_experience: 3)
 			@nancy = Contestant.create!(name: "Nancy", age: 29, hometown: "Arvada", years_of_experience: 5)
 			@sherry = Contestant.create!(name: "Sherry", age: 28, hometown: "Westminster", years_of_experience: 2)
-			@tammi = Contestant.create!(name: "Tammi", age: 25, hometown: "Thornton", years_of_experience: 1)
+			@tammi = Contestant.create!(name: "Tammi", age: 18, hometown: "Thornton", years_of_experience: 1)
 
 			@holly.projects << @denim
 			@holly.projects << @shoe
@@ -59,7 +59,7 @@ describe 'As a Visitor' do
 
 			visit "/projects/#{@shoe.id}"
 
-			expecte(page).to have_content("Average Contestant Experience: 26")
+			expect(page).to have_content("Average Contestant Experience: 28.0 years")
 		end
 	end
 end

@@ -2,4 +2,5 @@
 <p>Project Name: <%= @project.name %></p>
 <p>Project Material: <%= @project.material %></p>
 <p> Theme: <%= @project.challenge.theme %></p>
-<p>Number of Contestants: <%= @project.contestants.contestant_count %>
+<p>Number of Contestants: <%= @project.contestants.contestant_count %></p>
+<p>Average Contestant Experience: <%= @project.contestants.average_age.round(2) %> years.</p>

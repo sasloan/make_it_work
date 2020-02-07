@@ -23,10 +23,10 @@ RSpec.describe Contestant, type: :model do
 			@accessories = Challenge.create!(theme: "Using Accessories", project_budget: 200)
 			@hat = @accessories.projects.create!(name: "Hat style", material: "Hat stuff")
 			@shoe = @accessories.projects.create!(name: "Shoe styles", material: "shoe stuff")
-			@holly = Contestant.create!(name: "Holly", age: 27, hometown: "Detroit", years_of_experience: 3)
+			@holly = Contestant.create!(name: "Holly", age: 38, hometown: "Detroit", years_of_experience: 3)
 			@nancy = Contestant.create!(name: "Nancy", age: 29, hometown: "Arvada", years_of_experience: 5)
 			@sherry = Contestant.create!(name: "Sherry", age: 28, hometown: "Westminster", years_of_experience: 2)
-			@tammi = Contestant.create!(name: "Tammi", age: 25, hometown: "Thornton", years_of_experience: 1)
+			@tammi = Contestant.create!(name: "Tammi", age: 18, hometown: "Thornton", years_of_experience: 1)
 
 			@holly.projects << @denim
 			@holly.projects << @shoe
@@ -47,7 +47,7 @@ RSpec.describe Contestant, type: :model do
 		end
 
 		it '#average_age' do
-			expect(@shoe.contestants.average_age).to eq(26)
+			expect(@shoe.contestants.average_age).to eq(0.28e2)
 		end
 	end
 end
