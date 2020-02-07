@@ -41,8 +41,8 @@ RSpec.describe Contestant, type: :model do
 			@tammi.projects << @denim
 		end
 
-		it '#count' do
-			expect(@denim.count).to eq(2)
+		it '#contestant_count' do
+			expect(@denim.contestants.contestant_count).to eq(2)
 		end
 	end
 end

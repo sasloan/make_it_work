@@ -51,7 +51,7 @@ describe 'As a Visitor' do
 
 			visit "/projects/#{@denim.id}"
 
-			expect(page).to have_content("Total Contestants: 2")
+			expect(page).to have_content("Number of Contestants: 2")
 		end
 	end
 end
