@@ -26,6 +26,7 @@ describe 'As a Visitor' do
 			@sherry.projects << @shoe
 
 			@tammi.projects << @denim
+			@tammi.projects << @shoe
 		end
 
 		it 'I see the projects name and material' do
@@ -52,6 +53,13 @@ describe 'As a Visitor' do
 			visit "/projects/#{@denim.id}"
 
 			expect(page).to have_content("Number of Contestants: 2")
+		end
+
+		it 'I can see the average years of experience for all the contestants involved' do
+
+			visit "/projects/#{@shoe.id}"
+
+			expecte(page).to have_content("Average Contestant Experience: 26")
 		end
 	end
 end

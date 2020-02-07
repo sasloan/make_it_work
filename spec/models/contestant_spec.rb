@@ -39,10 +39,15 @@ RSpec.describe Contestant, type: :model do
 			@sherry.projects << @shoe
 
 			@tammi.projects << @denim
+			@tammi.projects << @shoe
 		end
 
 		it '#contestant_count' do
 			expect(@denim.contestants.contestant_count).to eq(2)
+		end
+
+		it '#average_age' do
+			expect(@shoe.contestants.average_age).to eq(26)
 		end
 	end
 end
